@@ -130,4 +130,24 @@ body {
                   }
             }
       }
+
+      .warning {
+            color: orangered;
+            font-size: 30px;
+            margin: 100px auto;
+      }
+      
+      a.return {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: $return;
+            font-weight: bold;
+            font-size: 20px;
+            border: 3px solid $return;
+            border-radius: 10px;
+      }
+      a.return:hover {
+            text-decoration: none;
+            color: $return;
+      }
 }

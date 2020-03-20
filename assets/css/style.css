@@ -142,4 +142,25 @@ body main section form div input[type="submit"]:hover {
           transform: scale(1.1);
   color: white;
 }
+
+body .warning {
+  color: orangered;
+  font-size: 30px;
+  margin: 100px auto;
+}
+
+body a.return {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #3626a7;
+  font-weight: bold;
+  font-size: 20px;
+  border: 3px solid #3626a7;
+  border-radius: 10px;
+}
+
+body a.return:hover {
+  text-decoration: none;
+  color: #3626a7;
+}
 /*# sourceMappingURL=style.css.map */

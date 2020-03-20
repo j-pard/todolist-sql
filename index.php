@@ -62,11 +62,11 @@
                               <input type="text" name="title" placeholder="A quoi tu penses ?">
                         </div>
                         <div>
-                              <label for="title">Détails ?</label>
+                              <label for="comment">Détails ?</label>
                               <textarea name="comment" maxlength="300" placeholder="N'oublie rien, même pas les # !"></textarea>
                         </div>
                         <div>
-                              <label for="title">Pour quand ?</label>
+                              <label for="endDate">Pour quand ?</label>
                               <input type="date" name="endDate" id="dateInput">
                         </div>
                         <div>
@@ -108,7 +108,9 @@
             </section>
       </main>
 
-      <footer class="wide"></footer>
+      <footer class="wide">
+
+      </footer>
 
       <script src="./assets/js/form.js"></script>
 </body>
