@@ -1,3 +1,8 @@
+<?php
+      require 'controllers/_connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,10 +29,16 @@
 
             <section id="currentTasksSection">
                   <h2>A faire</h2>
+                  <ul id="currentList">
+
+                  </ul>
             </section>
 
             <section id="archivedTasksSection">
                   <h2>Archives</h2>
+                  <ul id="archivedList">
+
+                  </ul>
             </section>
       </main>
 
