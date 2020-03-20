@@ -1,0 +1,63 @@
+@import "_reset.scss";
+@import "_mixins.scss";
+@import "_responsive.scss";
+@import "_colors.scss";
+@import "_headings.scss";
+
+$baseWidth: 800px;
+
+body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      color: $richblack;
+
+      .wide {
+            width: $baseWidth;
+      }
+
+      header {
+
+            h1 {
+                  text-align: center;
+                  text-transform: uppercase;
+                  font-size: 40px;
+
+                  padding: 20px;
+                  border-bottom: 2px solid $gray;
+
+                  span.subtitle-lightgray {
+                        color: $lightgray;
+                  }
+
+                  span.subtitle-red {
+                        color: orangered;
+                  }
+            }
+      }
+
+      main {
+            section {
+                  width: 100%;
+                  min-height: 100px;
+                  padding: 20px;
+                  margin: 20px 0;
+
+                  border: 1px solid $gray;
+                  border-radius: 20px;
+
+                  h2 {
+                        width: max-content;
+                        padding: 0 10px 5px 0;
+                        text-transform: uppercase;
+                        border-bottom: 1px solid $gray;
+                        border-right: 1px solid $gray;
+
+                        cursor: pointer;
+                        user-select: none;
+                  }
+            }
+      }
+}
