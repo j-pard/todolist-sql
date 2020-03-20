@@ -25,6 +25,27 @@
       <main class="wide">
             <section id="addTaskSection">
                   <h2>Nouveau</h2>
+                  <form action="controllers/_add.php" method="post">
+                        <div>
+                              <label for="title">Quoi ?</label>
+                              <input type="text" name="title" placeholder="A quoi tu penses ?">
+                        </div>
+                        <div>
+                              <label for="title">Détails ?</label>
+                              <textarea name="comment" maxlength="300" placeholder="N'oublie rien, même pas les # !"></textarea>
+                        </div>
+                        <div>
+                              <label for="title">Pour quand ?</label>
+                              <input type="date" name="endDate" id="dateInput">
+                        </div>
+                        <div>
+                              <input type="checkbox" name="reminder">
+                              <label for="reminder" class="small-label">Ne pas oublier</label>
+                        </div>
+                        <div>
+                              <input type="submit" value="Ajouter">
+                        </div>
+                  </form>
             </section>
 
             <section id="currentTasksSection">
@@ -43,5 +64,7 @@
       </main>
 
       <footer class="wide"></footer>
+
+      <script src="./assets/js/form.js"></script>
 </body>
 </html>

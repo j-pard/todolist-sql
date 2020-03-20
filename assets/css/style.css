@@ -28,7 +28,8 @@ body {
 }
 
 body .wide {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
 }
 
 body header h1 {
@@ -44,7 +45,7 @@ body header h1 span.subtitle-lightgray {
 }
 
 body header h1 span.subtitle-red {
-  color: orangered;
+  color: red;
 }
 
 body main section {
@@ -69,5 +70,76 @@ body main section h2 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+body main section form {
+  margin: 20px 0 0 30px;
+}
+
+body main section form div {
+  padding: 5px 0;
+}
+
+body main section form div label {
+  display: inline-block;
+  width: 150px;
+  vertical-align: initial;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+body main section form div label.small-label {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+body main section form div label:nth-child(1) {
+  vertical-align: top;
+}
+
+body main section form div input[type="text"], body main section form div textarea {
+  width: 100%;
+  max-width: 530px;
+  font-size: 18px;
+  padding: 2px 5px;
+}
+
+body main section form div textarea {
+  height: 110px;
+  font-size: 14px;
+  resize: none;
+}
+
+body main section form div input[type="datetime"] {
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+body main section form div input[type="submit"] {
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: 1px solid #494d4e;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 5px #f2f0f1;
+          box-shadow: 5px 5px 5px #f2f0f1;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+body main section form div input[type="submit"]:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
