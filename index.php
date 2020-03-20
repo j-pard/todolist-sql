@@ -19,9 +19,11 @@
                   . "</td>"
             . "</tr>" 
             ."<tr class='task-secondary'>"
-                  . "<td class='task-comment'>"
-                        . $data['comment']
-                  . "</td>"
+                  . "<td class='task-comment'>";
+                        if($data['comment']) {
+                              echo $data['comment'];
+                        }
+                  echo "</td>"
                   . "<td class='task-date'>"
                         . "<p class='task-addDate'>"
                               . $data['add_date']
@@ -66,13 +68,14 @@
                               <textarea name="comment" maxlength="300" placeholder="N'oublie rien, même pas les # !"></textarea>
                         </div>
                         <div>
+                              <input type="checkbox" name="reminder" id="reminder">
+                              <label for="reminder" class="small-label">Deadline ?</label>
+                        </div>
+                        <div id="deadlineDiv" class="not-displayed">
                               <label for="endDate">Pour quand ?</label>
-                              <input type="date" name="endDate" id="dateInput">
+                              <input type="date" name="endDate" id="dateInput" disabled>
                         </div>
-                        <div>
-                              <input type="checkbox" name="reminder">
-                              <label for="reminder" class="small-label">Ne pas oublier</label>
-                        </div>
+            
                         <div>
                               <input type="submit" value="Ajouter">
                         </div>
@@ -86,8 +89,8 @@
                         <?php
                               while($task = $activeTasks->fetch()) {
                                     createTask($task);
-                                    $activeTasks->closeCursor();
                               }
+                              $activeTasks->closeCursor();
                         ?>
 
                   </table>
@@ -100,8 +103,8 @@
                         <?php
                               while($task = $archivedTasks->fetch()) {
                                     createTask($task);
-                                    $archivedTasks->closeCursor();
                               }
+                              $archivedTasks->closeCursor();
                         ?>
 
                   </table>

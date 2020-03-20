@@ -71,7 +71,7 @@
                   header("Location: ../index.php");
             }
             else {
-                  echo "<h1 class='warning'>Le titre de la tâche ne peut être vide !</h1>";
+                  echo "<h1 class='warning'>Ne rien faire n'est pas une tâche !</h1>";
                   echo "<div><a class='return' href='../index.php'>Retour</a>";
             }   
 

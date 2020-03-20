@@ -131,6 +131,10 @@ body {
             }
       }
 
+      .not-displayed {
+            display: none;
+      }
+
       .warning {
             color: orangered;
             font-size: 30px;

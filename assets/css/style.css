@@ -143,6 +143,10 @@ body main section form div input[type="submit"]:hover {
   color: white;
 }
 
+body .not-displayed {
+  display: none;
+}
+
 body .warning {
   color: orangered;
   font-size: 30px;

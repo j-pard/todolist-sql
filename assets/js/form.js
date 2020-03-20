@@ -1,6 +1,9 @@
 const dateInput = document.getElementById("dateInput");
+const remindInput = document.getElementById("reminder");
+const deadlineDiv = document.getElementById("deadlineDiv");
 
 
+// Today is the default date value
 const getDate = () => {
       const fullDate = new Date();
       const year = fullDate.getFullYear();
@@ -20,3 +23,15 @@ const getDate = () => {
 }
 
 getDate();
+
+// Deadline menu
+remindInput.addEventListener("click", () => {
+      if(remindInput.checked) {
+            deadlineDiv.classList.remove("not-displayed");
+            dateInput.removeAttribute("disabled");
+      }
+      else {
+            deadlineDiv.classList.add("not-displayed");
+            dateInput.setAttribute("disabled", true);
+      }
+});
