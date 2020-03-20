@@ -1,6 +1,37 @@
 <?php
       require 'controllers/_connect.php';
 
+      $sqlActives = ("SELECT * FROM tasks WHERE archived = 0");
+      $sqlArchived = ("SELECT * FROM tasks WHERE archived = 1");
+
+      $activeTasks = $db->query($sqlActives);
+      $archivedTasks = $db->query($sqlArchived);
+
+
+      function createTask($data) {
+            echo  "<tr class='task'>"
+                  . "<td class='task-title'>"
+                        . $data['title']
+                  . "</td>"
+
+                  . "<td class='task-actions'>"
+                        . "X - X - X"
+                  . "</td>"
+            . "</tr>" 
+            ."<tr class='task-secondary'>"
+                  . "<td class='task-comment'>"
+                        . $data['comment']
+                  . "</td>"
+                  . "<td class='task-date'>"
+                        . "<p class='task-addDate'>"
+                              . $data['add_date']
+                        ."</p>"
+                        . "<p class='task-endDate'>"
+                              . $data['end_date']
+                        ."</p>"
+                  . "</td>"
+            . "</tr>";
+      }
 ?>
 
 <!DOCTYPE html>
@@ -50,16 +81,30 @@
 
             <section id="currentTasksSection">
                   <h2>A faire</h2>
-                  <ul id="currentList">
+                  <table id="currentList">
 
-                  </ul>
+                        <?php
+                              while($task = $activeTasks->fetch()) {
+                                    createTask($task);
+                                    $activeTasks->closeCursor();
+                              }
+                        ?>
+
+                  </table>
             </section>
 
             <section id="archivedTasksSection">
                   <h2>Archives</h2>
-                  <ul id="archivedList">
+                  <table id="archivedList">
 
-                  </ul>
+                        <?php
+                              while($task = $archivedTasks->fetch()) {
+                                    createTask($task);
+                                    $archivedTasks->closeCursor();
+                              }
+                        ?>
+
+                  </table>
             </section>
       </main>
 
