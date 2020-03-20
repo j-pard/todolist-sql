@@ -25,11 +25,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #020202;
+  padding: 20px;
 }
 
 body .wide {
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 body header h1 {
@@ -38,6 +39,8 @@ body header h1 {
   font-size: 40px;
   padding: 20px;
   border-bottom: 2px solid #494d4e;
+  width: 70%;
+  margin: 0 auto;
 }
 
 body header h1 span.subtitle-lightgray {
@@ -62,9 +65,11 @@ body main section h2 {
   width: -moz-max-content;
   width: max-content;
   padding: 0 10px 5px 0;
+  margin-bottom: 20px;
   text-transform: uppercase;
   border-bottom: 1px solid #494d4e;
   border-right: 1px solid #494d4e;
+  border-bottom-right-radius: 10px;
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -78,11 +83,24 @@ body main section form {
 
 body main section form div {
   padding: 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body main section form div label {
+  min-width: 100px;
   display: inline-block;
-  width: 150px;
+  width: 15%;
   vertical-align: initial;
   font-size: 20px;
   font-weight: bold;
@@ -98,8 +116,8 @@ body main section form div label:nth-child(1) {
 }
 
 body main section form div input[type="text"], body main section form div textarea {
-  width: 100%;
-  max-width: 530px;
+  margin: 5px 0;
+  width: 80%;
   font-size: 18px;
   padding: 2px 5px;
 }
@@ -143,6 +161,88 @@ body main section form div input[type="submit"]:hover {
   color: white;
 }
 
+body main section table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+body main section table tr.task {
+  margin: 5px 0;
+  background-color: #f2f0f1;
+}
+
+body main section table tr {
+  width: 100%;
+  font-size: 18px;
+  border-collapse: collapse;
+}
+
+body main section table tr td.task-title {
+  width: 70%;
+  padding: 5px 10px;
+}
+
+body main section table tr td.task-actions {
+  text-align: right;
+  padding: 5px;
+}
+
+body main section table tr td.task-actions form.actions-form {
+  display: inline-block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 100%;
+  margin: 0;
+  padding: 2px;
+}
+
+body main section table tr td.task-actions form.actions-form button {
+  border: none;
+  background: none;
+}
+
+body main section table tr td.task-actions form.actions-form i {
+  font-size: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+body main section table tr td.task-actions form.actions-form i.check-btn {
+  color: #22bb33;
+}
+
+body main section table tr td.task-actions form.actions-form i.edit-btn {
+  color: #3498db;
+}
+
+body main section table tr td.task-actions form.actions-form i.delete-btn {
+  color: orangered;
+}
+
+body main section table tr td.task-actions form.actions-form i.restore-btn {
+  color: #3498db;
+  margin-right: 10px;
+}
+
+body main section table tr td.task-comment {
+  padding: 5px 5px 5px 20px;
+  font-size: 16px;
+  color: #494d4e;
+}
+
+body main section table tr p.task-date {
+  padding: 5px 10px;
+  font-size: 16px;
+  text-align: right;
+  font-style: italic;
+  color: #494d4e;
+}
+
+body main section table#archivedList tr td.task-title, body main section table#archivedList tr td.task-comment, body main section table#archivedList tr td.task-date {
+  text-decoration: line-through;
+}
+
 body .not-displayed {
   display: none;
 }
@@ -156,15 +256,15 @@ body .warning {
 body a.return {
   padding: 10px 20px;
   text-decoration: none;
-  color: #3626a7;
+  color: #3498db;
   font-weight: bold;
   font-size: 20px;
-  border: 3px solid #3626a7;
+  border: 3px solid #3498db;
   border-radius: 10px;
 }
 
 body a.return:hover {
   text-decoration: none;
-  color: #3626a7;
+  color: #3498db;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,7 +4,7 @@
 @import "_colors.scss";
 @import "_headings.scss";
 
-$baseWidth: 800px;
+$baseWidth: 1000px;
 
 body {
       display: flex;
@@ -13,6 +13,7 @@ body {
       align-items: center;
 
       color: $richblack;
+      padding: 20px;
 
       .wide {
             width: 100%;
@@ -28,6 +29,8 @@ body {
 
                   padding: 20px;
                   border-bottom: 2px solid $gray;
+                  width: 70%;
+                  margin: 0 auto;
 
                   span.subtitle-lightgray {
                         color: $lightgray;
@@ -52,9 +55,11 @@ body {
                   h2 {
                         width: max-content;
                         padding: 0 10px 5px 0;
+                        margin-bottom: 20px;
                         text-transform: uppercase;
                         border-bottom: 1px solid $gray;
                         border-right: 1px solid $gray;
+                        border-bottom-right-radius: 10px;
 
                         cursor: pointer;
                         user-select: none;
@@ -65,9 +70,16 @@ body {
                         div {
                               padding: 5px 0;
 
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: left;
+                              flex-wrap: wrap;
+
                               label {
+                                    min-width: 100px;
+                                    $labelWidth: 15%;
                                     display: inline-block;
-                                    width: 150px;
+                                    width: $labelWidth;
                                     vertical-align: initial;
       
                                     font-size: 20px;
@@ -84,8 +96,8 @@ body {
                               }
 
                               input[type="text"], textarea {
-                                    width: 100%;
-                                    max-width: 530px;
+                                    margin: 5px 0;
+                                    width: 80%;
                                     font-size: 18px;
                                     padding: 2px 5px;
                               }
@@ -127,6 +139,86 @@ body {
                               }
                         }
                         
+                  }
+
+                  table {
+                        border-collapse: collapse;
+                        width: 100%;
+
+                        tr.task {
+                              margin: 5px 0;
+                              background-color: $lightgray;
+                        }
+
+                        tr {
+                              width: 100%;
+                              font-size: 18px;
+                              border-collapse: collapse;
+
+                              td.task-title {
+                                    width: 70%;
+                                    padding: 5px 10px;
+                              }
+
+                              td.task-actions {
+                                    text-align: right;
+                                    padding: 5px;
+                                    form.actions-form {
+                                          display: inline-block;
+                                          width: max-content;
+                                          height: 100%;
+                                          margin: 0;
+                                          padding: 2px;
+                                          button {
+                                                border: none;
+                                                background: none;
+                                          }
+      
+                                          i {
+                                                font-size: 20px;
+                                                margin: 0 5px;
+                                                cursor: pointer;
+                                          }
+      
+                                          i.check-btn {
+                                                color: $success;
+                                          }
+                                          i.edit-btn {
+                                                color: $return;
+                                          }
+                                          i.delete-btn {
+                                                color: orangered;
+                                          }
+                                          i.restore-btn {
+                                                color: $return;
+                                                margin-right: 10px;
+                                          }
+                                    }
+                              }
+
+                              td.task-comment {
+                                    padding: 5px 5px 5px 20px;
+                                    font-size: 16px;
+                                    color: $gray;
+                              }
+
+                              p.task-date {
+                                    padding: 5px 10px;
+                                    font-size: 16px;
+                                    text-align: right;
+                                    font-style: italic;
+                                    color: $gray;
+                              }
+                        }
+
+                  }
+
+                  table#archivedList {
+                        tr {
+                              td.task-title, td.task-comment, td.task-date {
+                                    text-decoration: line-through;
+                              }
+                        }
                   }
             }
       }

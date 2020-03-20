@@ -8,15 +8,33 @@
       $archivedTasks = $db->query($sqlArchived);
 
 
-      function createTask($data) {
+      function createTask($data, $actions) {
             echo  "<tr class='task'>"
                   . "<td class='task-title'>"
                         . $data['title']
                   . "</td>"
 
-                  . "<td class='task-actions'>"
-                        . "X - X - X"
-                  . "</td>"
+                  . "<td class='task-actions'>";
+                        // Buttons config
+                        if($actions == "active") {
+                              echo  "<form action='controllers/_check.php' method='POST' class='actions-form'>"
+                                          //. "<button type='submit' name='edit' value=" . $data['id'] . "><i class='fas fa-edit edit-btn'></i></button>"
+                                          . "<button type='submit' name='check' value=" . $data['id'] . "><i class='fas fa-check check-btn'></i></i></button>"
+                                    . "</form>";
+                        }
+                        else if ($actions == "archived") {
+                              echo  "<form action='controllers/_restore.php' method='POST' class='actions-form'>"
+                                    . "<button type='submit' name='restore' value=" . $data['id'] . "><i class='fas fa-angle-double-up restore-btn'></i></button>"
+                                    . "</form>";
+
+                              echo  "<form action='controllers/_delete.php' method='POST' class='actions-form'>"
+                                    . "<button type='submit' name='delete' value=" . $data['id'] . "><i class='fas fa-times delete-btn'></i></button>"
+                                    . "</form>";
+                        }
+                        else {
+                              echo "Uuuuh ...";
+                        }
+                  echo "</td>"
             . "</tr>" 
             ."<tr class='task-secondary'>"
                   . "<td class='task-comment'>";
@@ -25,12 +43,12 @@
                         }
                   echo "</td>"
                   . "<td class='task-date'>"
-                        . "<p class='task-addDate'>"
-                              . $data['add_date']
-                        ."</p>"
-                        . "<p class='task-endDate'>"
-                              . $data['end_date']
-                        ."</p>"
+                        . "<p class='task-date'>"
+                              . $data['add_date'];
+                              if(isset($data['end_date'])) {
+                                    echo " - " . $data['end_date'];
+                              }
+                        echo "</p>"
                   . "</td>"
             . "</tr>";
       }
@@ -88,7 +106,7 @@
 
                         <?php
                               while($task = $activeTasks->fetch()) {
-                                    createTask($task);
+                                    createTask($task, "active");
                               }
                               $activeTasks->closeCursor();
                         ?>
@@ -102,7 +120,7 @@
 
                         <?php
                               while($task = $archivedTasks->fetch()) {
-                                    createTask($task);
+                                    createTask($task, "archived");
                               }
                               $archivedTasks->closeCursor();
                         ?>
