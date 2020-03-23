@@ -52,18 +52,33 @@ body {
                   border: 1px solid $gray;
                   border-radius: 20px;
 
-                  h2 {
-                        width: max-content;
-                        padding: 0 10px 5px 0;
-                        margin-bottom: 20px;
-                        text-transform: uppercase;
-                        border-bottom: 1px solid $gray;
-                        border-right: 1px solid $gray;
-                        border-bottom-right-radius: 10px;
+                  div.h2row {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        align-items: stretch;
 
-                        cursor: pointer;
-                        user-select: none;
+                        h2 {
+                              width: max-content;
+                              padding: 0 10px 5px 0;
+                              margin-bottom: 20px;
+                              text-transform: uppercase;
+                              border-bottom: 1px solid $gray;
+                              border-right: 1px solid $gray;
+                              border-bottom-right-radius: 10px;
+      
+                              cursor: pointer;
+                              user-select: none;
+                        }
+
+                        i {
+                              font-size: 30px;
+                              padding-right: 10px;
+                              visibility: hidden;
+                        }
                   }
+
 
                   form {
                         margin: 20px 0 0 30px;
@@ -258,9 +273,12 @@ body {
       .retracted {
             height: 30px;
             overflow: hidden;
-            
-            *:not(h2) {
+            ul {
                   visibility: hidden;
+            }
+
+            .afterH2, .sectionTitle {
+                  visibility: visible;
             }
       }
 }

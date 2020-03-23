@@ -60,7 +60,25 @@ body main section {
   border-radius: 20px;
 }
 
-body main section h2 {
+body main section div.h2row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+body main section div.h2row h2 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -75,6 +93,12 @@ body main section h2 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+body main section div.h2row i {
+  font-size: 30px;
+  padding-right: 10px;
+  visibility: hidden;
 }
 
 body main section form {
@@ -288,7 +312,11 @@ body .retracted {
   overflow: hidden;
 }
 
-body .retracted *:not(h2) {
+body .retracted ul {
   visibility: hidden;
+}
+
+body .retracted .afterH2, body .retracted .sectionTitle {
+  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */
