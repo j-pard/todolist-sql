@@ -82,7 +82,7 @@
 
       <main class="wide">
             <section id="addTaskSection">
-                  <h2>Nouveau</h2>
+                  <h2 id="newTitle" class="sectionTitle">Nouvelle tâche</h2>
                   <form action="controllers/_add.php" method="post">
                         <div>
                               <label for="title">Quoi ?</label>
@@ -108,7 +108,7 @@
             </section>
 
             <section id="currentTasksSection">
-                  <h2>A faire</h2>
+                  <h2 id="activesTitle" class="sectionTitle">A faire</h2>
                   <ul id="currentList" class='tasksList'>
 
                         <?php
@@ -121,8 +121,8 @@
                   </ul>
             </section>
 
-            <section id="archivedTasksSection">
-                  <h2>Archives</h2>
+            <section id="archivedTasksSection" class="retracted">
+                  <h2 id="archivesTitle" class="sectionTitle">Archives</h2>
                   <ul id="archivedList" class='tasksList'>
 
                         <?php
@@ -140,6 +140,7 @@
 
       </footer>
 
+      <script src="./assets/js/script.js"></script>
       <script src="./assets/js/form.js"></script>
 </body>
 </html>

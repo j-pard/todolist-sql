@@ -254,4 +254,13 @@ body {
             text-decoration: none;
             color: $return;
       }
+
+      .retracted {
+            height: 30px;
+            overflow: hidden;
+            
+            *:not(h2) {
+                  visibility: hidden;
+            }
+      }
 }

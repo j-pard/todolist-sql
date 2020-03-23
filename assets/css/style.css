@@ -282,4 +282,13 @@ body a.return:hover {
   text-decoration: none;
   color: #3498db;
 }
+
+body .retracted {
+  height: 30px;
+  overflow: hidden;
+}
+
+body .retracted *:not(h2) {
+  visibility: hidden;
+}
 /*# sourceMappingURL=style.css.map */
