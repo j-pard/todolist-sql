@@ -114,6 +114,10 @@ body {
                                     text-align: center;
                               }
 
+                              input#reminder {
+                                    margin-right: 10px;
+                              }
+
                               input[type="submit"] {
                                     padding: 8px 16px;
                                     margin-top: 10px;
@@ -141,28 +145,30 @@ body {
                         
                   }
 
-                  table {
-                        border-collapse: collapse;
+                  ul.tasksList {
                         width: 100%;
+                        list-style: none;
 
-                        tr.task {
+                        li.task {
                               margin: 5px 0;
-                              background-color: $lightgray;
-                        }
+                              padding: 5px;
+                              border-radius: 10px;
 
-                        tr {
-                              width: 100%;
-                              font-size: 18px;
-                              border-collapse: collapse;
-
-                              td.task-title {
-                                    width: 70%;
-                                    padding: 5px 10px;
-                              }
-
-                              td.task-actions {
-                                    text-align: right;
-                                    padding: 5px;
+                              div.row {
+                                    width: 100%;
+                                    font-size: 18px;
+      
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: nowrap;
+                                    justify-content: space-between;
+      
+                                    div.title-cont {
+                                          width: 90%;
+                                          padding: 5px 10px;
+                                    }
+      
+      
                                     form.actions-form {
                                           display: inline-block;
                                           width: max-content;
@@ -194,30 +200,32 @@ body {
                                                 margin-right: 10px;
                                           }
                                     }
-                              }
-
-                              td.task-comment {
-                                    padding: 5px 5px 5px 20px;
-                                    font-size: 16px;
-                                    color: $gray;
-                              }
-
-                              p.task-date {
-                                    padding: 5px 10px;
-                                    font-size: 16px;
-                                    text-align: right;
-                                    font-style: italic;
-                                    color: $gray;
+      
+                                    .task-comment {
+                                          padding: 5px 5px 5px 20px;
+                                          font-size: 16px;
+                                          color: $gray;
+                                    }
+      
+                                    .task-date {
+                                          padding: 5px 10px;
+                                          font-size: 16px;
+                                          text-align: right;
+                                          font-style: italic;
+                                          color: $gray;
+                                    }
                               }
                         }
 
+                        li.task:nth-child(odd) {
+                              background-color: $lightgray;
+                        }
                   }
 
-                  table#archivedList {
-                        tr {
-                              td.task-title, td.task-comment, td.task-date {
-                                    text-decoration: line-through;
-                              }
+                  ul#archivedList {
+
+                        .task-title, td.task-comment, .task-date {
+                              text-decoration: line-through;
                         }
                   }
             }

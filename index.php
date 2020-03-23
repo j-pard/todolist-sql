@@ -9,12 +9,15 @@
 
 
       function createTask($data, $actions) {
-            echo  "<tr class='task'>"
-                  . "<td class='task-title'>"
-                        . $data['title']
-                  . "</td>"
+            echo  "<li class='task'>";
+                  // ROW TOP
+                  echo "<div class='task-top row'>"
+                        . "<div class='title-cont'>"
+                              . "<h4>"
+                                    . $data['title']
+                              . "</h4>"
+                        . "</div>";
 
-                  . "<td class='task-actions'>";
                         // Buttons config
                         if($actions == "active") {
                               echo  "<form action='controllers/_check.php' method='POST' class='actions-form'>"
@@ -28,29 +31,33 @@
                                     . "</form>";
 
                               echo  "<form action='controllers/_delete.php' method='POST' class='actions-form'>"
-                                    . "<button type='submit' name='delete' value=" . $data['id'] . "><i class='fas fa-times delete-btn'></i></button>"
+                                          . "<button type='submit' name='delete' value=" . $data['id'] . "><i class='fas fa-times delete-btn'></i></button>"
                                     . "</form>";
                         }
                         else {
-                              echo "Uuuuh ...";
+                              echo "<p class:'error'>Uuuuh ...</p>";
                         }
-                  echo "</td>"
-            . "</tr>" 
-            ."<tr class='task-secondary'>"
-                  . "<td class='task-comment'>";
-                        if($data['comment']) {
-                              echo $data['comment'];
-                        }
-                  echo "</td>"
-                  . "<td class='task-date'>"
-                        . "<p class='task-date'>"
-                              . $data['add_date'];
-                              if(isset($data['end_date'])) {
-                                    echo " - " . $data['end_date'];
+
+                  echo "</div>";
+
+                  // ROW BOTTOM
+                  echo "<div class='task-bottom row'>";
+                        echo  "<div class='task-comment'>";
+                              if($data['comment']) {
+                                    echo $data['comment'];
                               }
-                        echo "</p>"
-                  . "</td>"
-            . "</tr>";
+                        echo  "</div>";
+                  
+                        echo  "<div class='task-date'>"
+                                    . "<p class='task-date'>"
+                                          . $data['add_date'];
+                                          if(isset($data['end_date'])) {
+                                                echo " - " . $data['end_date'];
+                                          }
+                                    echo "</p>"
+                              . "</div>"
+                  . "</div>"
+            . "</li>";
       }
 ?>
 
@@ -87,7 +94,7 @@
                         </div>
                         <div>
                               <input type="checkbox" name="reminder" id="reminder">
-                              <label for="reminder" class="small-label">Deadline ?</label>
+                              <label for="reminder" class="small-label"> Deadline ?</label>
                         </div>
                         <div id="deadlineDiv" class="not-displayed">
                               <label for="endDate">Pour quand ?</label>
@@ -102,7 +109,7 @@
 
             <section id="currentTasksSection">
                   <h2>A faire</h2>
-                  <table id="currentList">
+                  <ul id="currentList" class='tasksList'>
 
                         <?php
                               while($task = $activeTasks->fetch()) {
@@ -111,12 +118,12 @@
                               $activeTasks->closeCursor();
                         ?>
 
-                  </table>
+                  </ul>
             </section>
 
             <section id="archivedTasksSection">
                   <h2>Archives</h2>
-                  <table id="archivedList">
+                  <ul id="archivedList" class='tasksList'>
 
                         <?php
                               while($task = $archivedTasks->fetch()) {
@@ -125,7 +132,7 @@
                               $archivedTasks->closeCursor();
                         ?>
 
-                  </table>
+                  </ul>
             </section>
       </main>
 

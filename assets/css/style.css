@@ -134,6 +134,10 @@ body main section form div input[type="datetime"] {
   text-align: center;
 }
 
+body main section form div input#reminder {
+  margin-right: 10px;
+}
+
 body main section form div input[type="submit"] {
   padding: 8px 16px;
   margin-top: 10px;
@@ -161,33 +165,40 @@ body main section form div input[type="submit"]:hover {
   color: white;
 }
 
-body main section table {
-  border-collapse: collapse;
+body main section ul.tasksList {
   width: 100%;
+  list-style: none;
 }
 
-body main section table tr.task {
+body main section ul.tasksList li.task {
   margin: 5px 0;
-  background-color: #f2f0f1;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-body main section table tr {
+body main section ul.tasksList li.task div.row {
   width: 100%;
   font-size: 18px;
-  border-collapse: collapse;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-body main section table tr td.task-title {
-  width: 70%;
+body main section ul.tasksList li.task div.row div.title-cont {
+  width: 90%;
   padding: 5px 10px;
 }
 
-body main section table tr td.task-actions {
-  text-align: right;
-  padding: 5px;
-}
-
-body main section table tr td.task-actions form.actions-form {
+body main section ul.tasksList li.task div.row form.actions-form {
   display: inline-block;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -197,41 +208,41 @@ body main section table tr td.task-actions form.actions-form {
   padding: 2px;
 }
 
-body main section table tr td.task-actions form.actions-form button {
+body main section ul.tasksList li.task div.row form.actions-form button {
   border: none;
   background: none;
 }
 
-body main section table tr td.task-actions form.actions-form i {
+body main section ul.tasksList li.task div.row form.actions-form i {
   font-size: 20px;
   margin: 0 5px;
   cursor: pointer;
 }
 
-body main section table tr td.task-actions form.actions-form i.check-btn {
+body main section ul.tasksList li.task div.row form.actions-form i.check-btn {
   color: #22bb33;
 }
 
-body main section table tr td.task-actions form.actions-form i.edit-btn {
+body main section ul.tasksList li.task div.row form.actions-form i.edit-btn {
   color: #3498db;
 }
 
-body main section table tr td.task-actions form.actions-form i.delete-btn {
+body main section ul.tasksList li.task div.row form.actions-form i.delete-btn {
   color: orangered;
 }
 
-body main section table tr td.task-actions form.actions-form i.restore-btn {
+body main section ul.tasksList li.task div.row form.actions-form i.restore-btn {
   color: #3498db;
   margin-right: 10px;
 }
 
-body main section table tr td.task-comment {
+body main section ul.tasksList li.task div.row .task-comment {
   padding: 5px 5px 5px 20px;
   font-size: 16px;
   color: #494d4e;
 }
 
-body main section table tr p.task-date {
+body main section ul.tasksList li.task div.row .task-date {
   padding: 5px 10px;
   font-size: 16px;
   text-align: right;
@@ -239,7 +250,11 @@ body main section table tr p.task-date {
   color: #494d4e;
 }
 
-body main section table#archivedList tr td.task-title, body main section table#archivedList tr td.task-comment, body main section table#archivedList tr td.task-date {
+body main section ul.tasksList li.task:nth-child(odd) {
+  background-color: #f2f0f1;
+}
+
+body main section ul#archivedList .task-title, body main section ul#archivedList td.task-comment, body main section ul#archivedList .task-date {
   text-decoration: line-through;
 }
 
