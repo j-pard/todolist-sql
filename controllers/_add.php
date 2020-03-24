@@ -8,6 +8,7 @@
 </head>
 <body>
       <?php
+
             if(isset($_POST['title']) && !empty($_POST['title'])) {
 
                   function sanitize($input) {
@@ -31,6 +32,13 @@
 
                   if(isset($_POST['reminder']) && isset($_POST['endDate'])) { // TASK WITH END DATE
                         $reminder = sanitize($_POST['reminder']);
+                        if($reminder == "on") {
+                              $reminder = 1;
+                        }
+                        else {
+                              $reminder = 0;
+                        }
+                        
                         $end_date = sanitize($_POST['endDate']);
 
                         $values = [
@@ -69,6 +77,7 @@
                   $request->execute($values);
 
                   header("Location: ../index.php");
+
             }
             else {
                   echo "<h1 class='warning'>Ne rien faire n'est pas une tâche !</h1>";

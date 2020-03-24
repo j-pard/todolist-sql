@@ -9,7 +9,7 @@
 
 
       function createTask($data, $actions) {
-            echo  "<li class='task'>";
+            echo  "<li class='task' draggable='true'>";
                   // ROW TOP
                   echo "<div class='task-top row'>"
                         . "<div class='title-cont'>"
@@ -84,7 +84,7 @@
             <section id="addTaskSection">
                   <div class="h2row">
                         <h2 id="newTitle" class="sectionTitle">Nouvelle tâche</h2>
-                        <i class="fas fa-sort-down afterH2"></i>
+                        <i id="dropNew" class="fas fa-sort-down afterH2"></i>
                   </div>
                   <form action="controllers/_add.php" method="post">
                         <div>
@@ -113,7 +113,7 @@
             <section id="currentTasksSection">
                   <div class="h2row">
                         <h2 id="activesTitle" class="sectionTitle">A faire</h2>
-                        <i class="fas fa-sort-down afterH2"></i>
+                        <i id="dropActives" class="fas fa-sort-down afterH2"></i>
                   </div>
                   <ul id="currentList" class='tasksList'>
 
@@ -127,10 +127,10 @@
                   </ul>
             </section>
 
-            <section id="archivedTasksSection" class="retracted">
+            <section id="archivedTasksSection">
                   <div class="h2row">
                         <h2 id="archivesTitle" class="sectionTitle">Archives</h2>
-                        <i class="fas fa-sort-down afterH2"></i>
+                        <i id="dropArchived" class="fas fa-sort-down afterH2"></i>
                   </div>
                   <ul id="archivedList" class='tasksList'>
 

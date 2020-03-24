@@ -10,10 +10,16 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-end;
 
       color: $richblack;
-      padding: 20px;
+      padding: 20px 200px 20px 20px;
+
+      background-image: url("../img/bg1.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 
       .wide {
             width: 100%;
@@ -31,6 +37,8 @@ body {
                   border-bottom: 2px solid $gray;
                   width: 70%;
                   margin: 0 auto;
+
+                  text-shadow: 1px 1px 1px $gray;
 
                   span.subtitle-lightgray {
                         color: $lightgray;
@@ -50,6 +58,7 @@ body {
                   margin: 20px 0;
 
                   border: 1px solid $gray;
+                  box-shadow: 5px 5px 5px rgba(40, 40, 40, 0.5);
                   border-radius: 20px;
 
                   div.h2row {
@@ -75,8 +84,12 @@ body {
                         i {
                               font-size: 30px;
                               padding-right: 10px;
-                              visibility: hidden;
+                              display: block;
+                              transform: rotate(180deg);
+
+                              transition: all .3s;
                         }
+
                   }
 
 
@@ -164,10 +177,16 @@ body {
                         width: 100%;
                         list-style: none;
 
+                        [draggable] {
+                              user-select: none;
+                              cursor: grab;
+                        }
+
                         li.task {
                               margin: 5px 0;
                               padding: 5px;
                               border-radius: 10px;
+                              box-shadow: 2px 2px 2px rgba(40, 40, 40, 0.5);
 
                               div.row {
                                     width: 100%;
@@ -277,8 +296,14 @@ body {
                   visibility: hidden;
             }
 
-            .afterH2, .sectionTitle {
+            .sectionTitle {
                   visibility: visible;
+                  display: block;
+            }
+
+            .afterH2 {
+                  display: block;
+                  transform: rotate(0deg);
             }
       }
 }

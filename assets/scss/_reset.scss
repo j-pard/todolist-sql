@@ -8,5 +8,11 @@
 body {
   overflow-x: hidden;
   width: 100%;
+  -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
