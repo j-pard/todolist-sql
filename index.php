@@ -52,7 +52,7 @@
                                     . "<p class='task-date'>"
                                           . $data['add_date'];
                                           if(isset($data['end_date'])) {
-                                                echo " - " . $data['end_date'];
+                                                echo " - <span class='endDate'>" . $data['end_date'] . "</span>";
                                           }
                                     echo "</p>"
                               . "</div>"

@@ -2,6 +2,7 @@ const dateInput = document.getElementById("dateInput");
 const remindInput = document.getElementById("reminder");
 const deadlineDiv = document.getElementById("deadlineDiv");
 
+let today;
 
 // Today is the default date value
 const getDate = () => {
@@ -17,7 +18,7 @@ const getDate = () => {
             day = "0" + day;
       }
 
-      const today = year + "-" + month + "-" + day; 
+      today = year + "-" + month + "-" + day; 
       
       dateInput.setAttribute("value", today);
 }
@@ -35,3 +36,22 @@ remindInput.addEventListener("click", () => {
             dateInput.setAttribute("disabled", true);
       }
 });
+
+// Check deadline for actives tasks
+
+const tasksList = currentTasksSection.querySelectorAll(".task");
+
+tasksList.forEach(task => {
+      if(task.querySelector(".endDate")) {
+            let endDate = task.querySelector(".endDate").textContent;
+                  if(endDate <= today) {
+                        task.classList.add("urgent");
+                  }
+                  else {
+                        task.classList.remove("urgent");
+                  }
+      }
+            
+});
+
+//console.log(task.querySelector(".endDate").textContent);
