@@ -9,11 +9,6 @@
 body {
   overflow-x: hidden;
   width: 100%;
-  -ms-overflow-style: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
 }
 body {
   display: -webkit-box;
@@ -295,12 +290,16 @@ body main section ul.tasksList li.task div.row form.actions-form i.restore-btn {
 }
 
 body main section ul.tasksList li.task div.row .task-comment {
+  width: 75%;
+  word-wrap: break-word;
   padding: 5px 5px 5px 20px;
   font-size: 16px;
   color: #494d4e;
 }
 
-body main section ul.tasksList li.task div.row .task-date {
+body main section ul.tasksList li.task div.row div.task-date {
+  min-width: 200px;
+  width: 20%;
   padding: 5px 10px;
   font-size: 16px;
   text-align: right;
@@ -308,7 +307,7 @@ body main section ul.tasksList li.task div.row .task-date {
   color: #494d4e;
 }
 
-body main section ul#archivedList .task-title, body main section ul#archivedList td.task-comment, body main section ul#archivedList .task-date {
+body main section ul#archivedList .title-cont, body main section ul#archivedList .task-comment, body main section ul#archivedList .task-date {
   text-decoration: line-through;
 }
 
@@ -359,5 +358,42 @@ body .retracted .afterH2 {
 
 body .urgent {
   border: 2px solid red;
+}
+
+@media only screen and (max-width: 480px) {
+  body {
+    padding: 0 !important;
+  }
+  body div.row div.task-date {
+    min-width: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 10px;
+  }
+  body div.row {
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+  }
+  body div.row div.task-comment {
+    width: 100% !important;
+  }
+  body div.row div.task-date {
+    width: 100% !important;
+  }
+  body div.row div.task-date p {
+    word-wrap: break-word !important;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  body {
+    padding: 20px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

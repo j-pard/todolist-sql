@@ -243,12 +243,16 @@ body {
                                     }
       
                                     .task-comment {
+                                          width: 75%;
+                                          word-wrap: break-word;
                                           padding: 5px 5px 5px 20px;
                                           font-size: 16px;
                                           color: $gray;
                                     }
       
-                                    .task-date {
+                                    div.task-date {
+                                          min-width: 200px;
+                                          width: 20%;
                                           padding: 5px 10px;
                                           font-size: 16px;
                                           text-align: right;
@@ -265,7 +269,7 @@ body {
 
                   ul#archivedList {
 
-                        .task-title, td.task-comment, .task-date {
+                        .title-cont, .task-comment, .task-date {
                               text-decoration: line-through;
                         }
                   }
@@ -316,5 +320,45 @@ body {
 
       .urgent {
             border: 2px solid red;
+      }
+}
+
+@media only screen and (max-width: 480px) {
+      body {
+            padding: 0 !important;
+
+            div.row {
+                  div.task-date {
+                        min-width: 0 !important;
+                  }
+            }
+      }
+}
+
+@media only screen and (max-width: 900px) {
+      body {
+            padding: 10px;
+
+            div.row {
+                  flex-wrap: wrap !important;
+
+                  div.task-comment {
+                        width: 100% !important;
+                  }
+            
+                  div.task-date {
+                        width: 100% !important;
+                        p {
+                              word-wrap: break-word !important;
+                        }
+                  }
+            }
+      }
+}
+
+@media only screen and (max-width: 1440px) {
+      body {
+            padding: 20px;
+            align-items: center;
       }
 }
